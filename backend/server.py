@@ -711,11 +711,15 @@ async def startup():
 async def shutdown():
     client.close()
 
+origins = [
+    "https://firmafinder.onrender.com",  # Your live Render frontend URL
+    "http://localhost:3000",             # For local testing if needed
+]
 
 app.include_router(api_router)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Forces local bypass
+    allow_origins= origins, # Forces local bypass
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
