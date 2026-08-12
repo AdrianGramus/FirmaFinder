@@ -157,7 +157,7 @@ def search_mfinante_by_name(name: str, county_code: str = "40") -> List[Dict]:
 
 
 def search_by_caen_code(caen_code: str, county_code: str = "40") -> List[Dict]:
-    """Search companies by CAEN code using mapped keywords on mfinante.gov.ro."""
+    """Search companies by CAEN code using mapped keywords, then filter out mismatches using ANAF official data."""
     caen = CAEN_CODES.get(caen_code)
     if not caen:
         return []
@@ -185,8 +185,28 @@ def search_by_caen_code(caen_code: str, county_code: str = "40") -> List[Dict]:
         except Exception as e:
             logger.warning(f"CAEN keyword search error for {keyword}: {e}")
             continue
-    return all_results
 
+    # Enrich with ANAF data to get the official registered CAEN code
+    if all_results:
+        all_results = enrich_companies_with_anaf(all_results)
+        
+        # Filter results: Keep only companies whose official ANAF CAEN matches the requested code
+        accurate_results = []
+        for company in all_results:
+            actual_caen = str(company.get("actual_caen", "")).strip()
+            
+            # If ANAF returned a CAEN code, ensure it matches the target code strictly
+            if actual_caen:
+                if actual_caen == caen_code:
+                    accurate_results.append(company)
+            else:
+                # If ANAF data didn't provide a code, you can choose to include or drop it. 
+                # Keeping it optional or dropping it ensures strict accuracy. Let's drop explicit mismatches:
+                pass 
+                
+        return accurate_results
+
+    return all_results
 
 def fetch_company_detail(cui: str) -> Dict:
     """Try to fetch company details from mfinante.gov.ro. Returns what we can get."""
