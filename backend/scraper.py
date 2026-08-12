@@ -29,6 +29,31 @@ COUNTY_CODES = {
 
 # CAEN codes requested by the user (printing, publishing, textiles, advertising)
 CAEN_CODES = {
+    "1721": {
+        "description_ro": "Fabricarea hârtiei și cartonului ondulat și a ambalajelor din hârtie și carton",
+        "description_en": "Manufacture of corrugated paper and paperboard and of containers of paper and paperboard",
+        "keywords": ["HARTIE", "CARTON", "ONDULAT", "AMBALAJ", "CUTIE", "SACI", "PUNGI", "BIBLIORAFT"],
+    },
+    "1722": {
+        "description_ro": "Fabricarea produselor de uz gospodăresc și sanitar, din hârtie sau carton",
+        "description_en": "Manufacture of household and sanitary goods and of toilet requisites",
+        "keywords": ["GOSPODARESC", "SANITAR", "HARTIE", "TISUE", "SERVETELE", "PROSOP"],
+    },
+    "1723": {
+        "description_ro": "Fabricarea articolelor de papetărie",
+        "description_en": "Manufacture of paper stationery",
+        "keywords": ["PAPETARIE", "CAIETE", "PLICURI", "REGISTRE", "BIROU", "PAPET"],
+    },
+    "1724": {
+        "description_ro": "Fabricarea tapetului",
+        "description_en": "Manufacture of wallpaper",
+        "keywords": ["TAPET", "TAPETURI", "PERETE", "DECORATIV"],
+    },
+    "1725": {
+        "description_ro": "Fabricarea altor articole din hârtie și carton n.c.a.",
+        "description_en": "Manufacture of other articles of paper and paperboard n.e.c.",
+        "keywords": ["HARTIE", "CARTON", "ALTE", "TURNARE", "PRESARE"],
+    },
     "1811": {
         "description_ro": "Tiparirea ziarelor",
         "description_en": "Printing of newspapers",
