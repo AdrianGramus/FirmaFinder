@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-04-05T20:36:26.219228",
+  "total_tests": 13,
+  "passed_tests": 13,
+  "success_rate": "100.0%",
+  "results": [
+    {
+      "test": "Search SOFT in BUCURESTI (county 40)",
+      "status": "PASSED",
+      "details": "Found 100 companies for SOFT in BUCURESTI"
+    },
+    {
+      "test": "Search AUTO in TIMIS (county 35)",
+      "status": "PASSED",
+      "details": "Found 100 companies for AUTO in TIMIS"
+    },
+    {
+      "test": "Get counties (should return 42)",
+      "status": "PASSED",
+      "details": "Retrieved 42 counties (expected 42)"
+    },
+    {
+      "test": "Get CAEN codes flat list",
+      "status": "PASSED",
+      "details": "Retrieved 88 CAEN codes"
+    },
+    {
+      "test": "Authentication check",
+      "status": "PASSED",
+      "details": "Authenticated as user: test-user-001"
+    },
+    {
+      "test": "Get user companies",
+      "status": "PASSED",
+      "details": "Retrieved 1 companies"
+    },
+    {
+      "test": "Get reminders",
+      "status": "PASSED",
+      "details": "Retrieved 0 reminders"
+    },
+    {
+      "test": "Get notifications",
+      "status": "PASSED",
+      "details": "Retrieved 0 notifications"
+    },
+    {
+      "test": "Get dashboard stats",
+      "status": "PASSED",
+      "details": "Stats: 1 total companies"
+    },
+    {
+      "test": "Update company",
+      "status": "PASSED",
+      "details": "Updated company status to: prospect"
+    },
+    {
+      "test": "Complete reminder",
+      "status": "PASSED",
+      "details": "Reminder marked as completed"
+    },
+    {
+      "test": "Delete company",
+      "status": "PASSED",
+      "details": "Company successfully deleted"
+    },
+    {
+      "test": "AI compose message",
+      "status": "PASSED",
+      "details": "Generated message length: 547"
+    }
+  ]
+}

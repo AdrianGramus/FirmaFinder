@@ -1,0 +1,94 @@
+{
+  "theme": "light",
+  "archetype": "Archetype 4 (Swiss & High-Contrast)",
+  "design_philosophy": "Function-first, authoritative, and structured. This CRM relies on data legibility, high contrast, and a 'control room' layout to manage leads. No purely decorative gradients. Elements must have clear boundaries.",
+  "colors": {
+    "background": "#F9F9FB",
+    "surface": "#FFFFFF",
+    "text_primary": "#0A0A0A",
+    "text_secondary": "#52525B",
+    "border": "#E4E4E7",
+    "primary": "#002FA7",
+    "primary_hover": "#002078",
+    "primary_text": "#FFFFFF",
+    "accent_danger": "#E63946",
+    "accent_success": "#22C55E",
+    "accent_warning": "#EAB308",
+    "pipeline_stages": {
+      "potential_lead": "#F1F5F9",
+      "prospect": "#EFF6FF",
+      "client": "#F0FDF4",
+      "rejected": "#FEF2F2"
+    }
+  },
+  "typography": {
+    "font_heading": "Manrope",
+    "font_body": "IBM Plex Sans",
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl font-bold tracking-tight text-[#0A0A0A]",
+      "h2": "text-2xl sm:text-3xl font-semibold tracking-tight text-[#0A0A0A]",
+      "h3": "text-xl sm:text-2xl font-medium tracking-tight text-[#0A0A0A]",
+      "h4": "text-lg sm:text-xl font-medium tracking-tight text-[#0A0A0A]",
+      "body": "text-base leading-relaxed text-[#52525B]",
+      "label": "text-xs font-semibold tracking-[0.2em] uppercase text-[#52525B]",
+      "data_value": "font-mono text-base font-medium text-[#0A0A0A]"
+    }
+  },
+  "layout": {
+    "grid_strategy": "Control Room Grid",
+    "spacing_scale": "Dense and structural (p-4, p-6) for data grids, generous (p-8, p-12) for outer padding.",
+    "border_radius": "rounded-sm",
+    "surfaces": "Grid Borders - expose the skeleton. Use border-collapse and 1px solid borders to define data zones. Avoid heavy drop shadows, use flat backgrounds and crisp lines."
+  },
+  "components": {
+    "cards": "Flat background (bg-white), 1px subtle border (border-[#E4E4E7]), no shadow. On hover, slight lift (-translate-y-1) and drop-shadow-sm.",
+    "buttons": {
+      "primary": "bg-[#002FA7] text-white rounded-sm hover:bg-[#002078] px-4 py-2 font-medium transition-colors",
+      "secondary": "bg-transparent border border-[#E4E4E7] text-[#0A0A0A] rounded-sm hover:bg-[#F4F4F5] px-4 py-2 font-medium transition-colors"
+    },
+    "tables": "Shadcn UI tables, dense padding. Zebra striping or clear 1px borders between rows. Headers must use 'label' typography.",
+    "inputs": "Shadcn UI inputs, rounded-sm, border-[#E4E4E7], focus:ring-2 focus:ring-[#002FA7] focus:border-transparent.",
+    "badges": "Square or rounded-sm, high contrast text on light tinted backgrounds (e.g., text-[#E63946] bg-[#FEE2E2])."
+  },
+  "motion": {
+    "hover_states": "Fast and crisp. Opacity shifts or 1px translation. transition: all 0.15s ease-out.",
+    "page_transitions": "Fade in with a subtle slide up (10px, 0.3s ease-out).",
+    "interactive": "Must respect prefers-reduced-motion."
+  },
+  "assets_and_media": {
+    "icons": "Phosphor Icons (@phosphor-icons/react) - Use 'regular' or 'bold' weights for clarity in dense data environments.",
+    "images": [
+      {
+        "category": "auth_background",
+        "url": "https://images.unsplash.com/photo-1666618207644-4de0226a3f85?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjBhcmNoaXRlY3R1cmUlMjBtaW5pbWFsaXN0fGVufDB8fHx8MTc3NTQxOTM3Mnww&ixlib=rb-4.1.0&q=85",
+        "description": "Minimalist modern office architecture for login screen background overlay."
+      },
+      {
+        "category": "user_avatar_1",
+        "url": "https://images.unsplash.com/photo-1762522926157-bcc04bf0b10a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NzU0MTkzNzJ8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Professional male headshot for user profile."
+      },
+      {
+        "category": "user_avatar_2",
+        "url": "https://images.pexels.com/photos/4183527/pexels-photo-4183527.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Professional female headshot for secondary user profile/contact."
+      },
+      {
+        "category": "company_logo_mockup",
+        "url": "https://images.unsplash.com/photo-1638864616270-64041b699a50?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MjJ8MHwxfHNlYXJjaHwzfHxjb21wYW55JTIwbG9nbyUyMG1pbmltYWwlMjBhYnN0cmFjdHxlbnwwfHx8fDE3NzU0MTkzNzJ8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract minimal company logo for pipeline cards."
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Install Google Fonts 'Manrope' and 'IBM Plex Sans'. Use Manrope for all headings and IBM Plex Sans for tables and body text.",
+    "Install @phosphor-icons/react for iconography.",
+    "Use strict Shadcn components but override default rounded-md to rounded-sm to maintain a sharp, authoritative 'Swiss' look.",
+    "Build the dashboard using a dense 'Control Room' grid layout. Use border-collapse and subtle borders to separate widgets instead of card drop-shadows.",
+    "Ensure all data tables (Lead lists, CRM pipelines) are highly readable. Use monospaced font or tabular numerals for CUI, CAEN, and phone numbers.",
+    "The UI should feel like an architectural blueprint or a high-end financial terminal: precise, mostly monochrome (black, white, grey), with blue and red used strictly for actions and alerts.",
+    "For the Kanban pipeline, use subtle background tints for columns and stark white cards with sharp borders for leads.",
+    "Implement language toggle (EN/RO) gracefully in the top nav or sidebar.",
+    "Ensure all interactive elements have data-testid attributes (e.g., data-testid='login-button', data-testid='lead-card-123')."
+  ]
+}
